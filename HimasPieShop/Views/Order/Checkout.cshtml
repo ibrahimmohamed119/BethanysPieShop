@@ -1,0 +1,98 @@
+﻿@model CountryAndOrderView
+
+<form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+    <h4>You're just one step away from your delicious pies.</h4>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.LastName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.LastName" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.FirstName" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.FirstName" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.AddressLine1" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.AddressLine1" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.AddressLine1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.AddressLine2" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.AddressLine2" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.AddressLine2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.ZipCode" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.ZipCode" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.ZipCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.City" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.City" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.State" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.State" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.CountryId" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <select asp-for="@Model.Order.CountryId">
+                @foreach (var country in @Model.Countries)
+                {
+                    <option value="@country.CountryId">@country.CountryName</option>
+                }
+            </select>
+        </div>
+        <span asp-validation-for="@Model.Order.CountryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.PhoneNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.PhoneNumber" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Order.Email" class="col-md-2 control-label"></label>
+        <div class="col-md-5">
+            <input asp-for="@Model.Order.Email" class="form-control" />
+        </div>
+        <span asp-validation-for="@Model.Order.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Complete order" />
+        </div>
+    </div>
+</form>
